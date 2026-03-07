@@ -23,4 +23,17 @@ public class TrainerDAO {
         return em.createQuery("select t from Trainer t", Trainer.class)
                 .getResultList();
     }
+    @Transactional
+    public void update(Trainer trainer) {
+        em.merge(trainer);
+    }
+
+    public Trainer findById(Long id) {
+        return em.find(Trainer.class, id);
+    }
+
+    public List<Trainer> findUnassignedTrainers() {
+        return em.createQuery("SELECT t FROM Trainer t WHERE t.sportClub IS NULL", Trainer.class)
+                .getResultList();
+    }
 }

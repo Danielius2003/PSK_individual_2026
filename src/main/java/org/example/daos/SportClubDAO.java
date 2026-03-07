@@ -15,13 +15,19 @@ public class SportClubDAO {
     @PersistenceContext
     private EntityManager em;
 
-    @Transactional
+    @Transactional//save ir commit
     public void save(SportClub sportClub) {
         em.persist(sportClub);
-    }
+    }//idedame i db
 
     public List<SportClub> findAll() {
         return em.createQuery("select t from SportClub t", SportClub.class)
                 .getResultList();
     }
+
+    public SportClub findById(Long id) {
+        return em.find(SportClub.class, id);
+
+    }
+
 }

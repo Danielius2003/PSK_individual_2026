@@ -12,10 +12,10 @@ public class SportClub {
 
     private String name;
 
-    @OneToMany(mappedBy = "sportClub", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "sportClub", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Trainer> trainers;
 
-    public SportClub() {}
+    public SportClub() {}//konstruktrius reikalingas del JPA
 
     public Long getId() { return id; }
 

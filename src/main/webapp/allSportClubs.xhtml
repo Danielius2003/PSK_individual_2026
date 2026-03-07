@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+
+    <h2>All Sport Clubs</h2>
+
+    <h:dataTable value="#{sportClubBean.allSportClubs}" var="c">
+        <h:column>
+            <h:link value="#{c.name}"
+                    outcome="sportClubInfo">
+                <f:param name="clubId" value="#{c.id}" />
+            </h:link>
+        </h:column>
+    </h:dataTable>
+
+    <h2>Add new club</h2>
+
+    <h:form>
+        <h:inputText value="#{sportClubBean.sportClub.name}" />
+        <h:commandButton value="Save"
+                         action="#{sportClubBean.saveSportClub}" />
+    </h:form>
+
+</h:body>
+</html>

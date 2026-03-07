@@ -5,12 +5,11 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
-import org.example.entities.Trainer;
 
 import java.util.List;
 
 @ApplicationScoped
-public class PlayerDao {
+public class PlayerDAO {
 
     @PersistenceContext
     private EntityManager em;

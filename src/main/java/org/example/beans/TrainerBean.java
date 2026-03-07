@@ -1,7 +1,9 @@
 package org.example.beans;
 
 import jakarta.annotation.PostConstruct;
+import org.example.daos.SportClubDAO;
 import org.example.daos.TrainerDAO;
+import org.example.entities.SportClub;
 import org.example.entities.Trainer;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
@@ -13,6 +15,8 @@ import java.util.List;
 @RequestScoped
 public class TrainerBean {
 
+    @Inject
+    private SportClubDAO sportClubDAO;
     @Inject
     private TrainerDAO trainerDAO;
 
@@ -33,6 +37,18 @@ public class TrainerBean {
 
     public void setTrainer(Trainer trainer) {
         this.trainer = trainer;
+    }
+
+    private Long selectedTrainerId;
+    private Long selectedClubId;
+
+    public void assignTrainerToClub() {
+        Trainer trainer = trainerDAO.findById(selectedTrainerId);
+        SportClub club = sportClubDAO.findById(selectedClubId);
+
+        trainer.setSportClub(club);
+
+        trainerDAO.update(trainer);
     }
 
     @PostConstruct

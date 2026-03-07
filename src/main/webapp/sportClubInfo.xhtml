@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<f:metadata>
+    <f:viewParam name="clubId"
+                 value="#{sportClubBean.clubId}" />
+</f:metadata>
+
+<h:body>
+
+    <h2>Club Details</h2>
+
+    Name: #{sportClubBean.sportClub.name}
+
+    <h3>Trainers</h3>
+
+    <h:dataTable value="#{sportClubBean.sportClub.trainers}" var="t">
+        <h:column>#{t.name}</h:column>
+    </h:dataTable>
+
+    <h3>Add Trainer</h3>
+
+    <h:form>
+        <h:selectOneMenu value="#{sportClubBean.selectedTrainerId}">
+            <f:selectItems value="#{sportClubBean.availableTrainers}"
+                           var="t"
+                           itemValue="#{t.id}"
+                           itemLabel="#{t.name}" />
+        </h:selectOneMenu>
+
+        <h:commandButton value="Add"
+                         action="#{sportClubBean.addTrainerToClub}" />
+    </h:form>
+
+    <a href="createTrainer.xhtml">Create Trainers</a>
+
+</h:body>
+</html>
