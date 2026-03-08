@@ -1,6 +1,8 @@
 package org.example.entities;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,15 +18,14 @@ public class Trainer {
     @JoinColumn(name = "club_id")
     private SportClub sportClub;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "trainer_player",
             joinColumns = @JoinColumn(name = "trainer_id"),
             inverseJoinColumns = @JoinColumn(name = "player_id")
     )
 
-    private List<Player> players;
-
+    private List<Player> players = new ArrayList<>();
     public Trainer() {}
 
     public Long getId() { return id; }

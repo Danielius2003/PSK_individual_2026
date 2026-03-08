@@ -18,7 +18,9 @@ import java.util.List;
 @RequestScoped //naujas instance su kiekviena http requestu
 public class SportClubBean {
 
-    @Inject
+    @Inject //CDI sukuria ojekta ir ji iterpia, valdo jo gyvavimo laika ir zino kad egzistuoja
+    //dao yra sukurtas per em, tai be inject em naudojimas visad rodys klaida
+
     private SportClubDAO sportClubDAO;
 
     @Inject

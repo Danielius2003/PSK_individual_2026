@@ -1,6 +1,8 @@
 package org.example.entities;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,7 +15,7 @@ public class Player {
     private String name;
 
     @ManyToMany(mappedBy = "players")
-    private List<Trainer> trainers;
+    private List<Trainer> trainers = new ArrayList<>();
 
     public Player() {}
 
@@ -24,4 +26,5 @@ public class Player {
 
     public List<Trainer> getTrainers() { return trainers; }
     public void setTrainers(List<Trainer> trainers) { this.trainers = trainers; }
+
 }

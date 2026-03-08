@@ -1,5 +1,6 @@
 package org.example.daos;
 
+import org.example.entities.Player;
 import org.example.entities.Trainer;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
@@ -36,4 +37,25 @@ public class TrainerDAO {
         return em.createQuery("SELECT t FROM Trainer t WHERE t.sportClub IS NULL", Trainer.class)
                 .getResultList();
     }
+
+    public List<Player> findAvailablePlayers(Trainer trainer) {
+        return em.createQuery("SELECT p FROM Player p WHERE :trainer NOT MEMBER OF p.trainers", Player.class)
+                .setParameter("trainer", trainer)
+                .getResultList();
+    }
+
+    @Transactional
+    public void addPlayerToTrainer(Long trainerId, Long playerId) {
+
+        Trainer trainer = em.find(Trainer.class, trainerId);
+        Player player = em.find(Player.class, playerId);
+
+        trainer.getPlayers().add(player);
+        player.getTrainers().add(trainer);
+    }
+
+    public EntityManager getEntityManager() {
+        return em;
+    }
+
 }
