@@ -20,6 +20,14 @@ public class PlayerDAO {
         em.persist(player);
     }
 
+    //MyBatis equivalent:
+//    @Mapper
+//    public interface PlayerMapper {
+//
+//        @Insert("INSERT INTO player(name) VALUES(#{name})")
+//        void insert(Player player);
+//    }
+
     public List<Player> findAll() {
         return em.createQuery("select t from Player t", Player.class)
                 .getResultList();

@@ -10,19 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7da38d1-686b-4776-a6de-84eccf8853d8" name="Changes" comment="Created logic for showing all the clubs, entering the clubs and displaying the trainers. Creating trainers and adding them to the clubs.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/beans/NavigationBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/trainerInfo.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pasiruosimas.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/beans/SportClubBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/beans/SportClubBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/beans/TrainerBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/beans/TrainerBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/PlayerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/PlayerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/TrainerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/TrainerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Trainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Trainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/allSportClubs.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/allSportClubs.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assignTrainer.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/createPlayer.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/createTrainer.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/createTrainer.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/sportClubInfo.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sportClubInfo.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +246,7 @@
       <workItem from="1772730479922" duration="2869000" />
       <workItem from="1772900652373" duration="1876000" />
       <workItem from="1772964160222" duration="12154000" />
-      <workItem from="1772991978241" duration="582000" />
+      <workItem from="1772991978241" duration="2316000" />
     </task>
     <task id="LOCAL−00001" summary="Created all the entities. Made logic for adding a Player. Made the project run on wildfly 39">
       <option name="closed" value="true" />

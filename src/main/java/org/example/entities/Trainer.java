@@ -12,6 +12,7 @@ public class Trainer {
     @GeneratedValue
     private Long id;
 
+    @Column(name = "trainer_name")
     private String name;
 
     @ManyToOne

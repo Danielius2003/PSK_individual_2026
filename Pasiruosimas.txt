@@ -1,0 +1,27 @@
+MyBatis paaiskinimas:
+1. sql rasome ranka
+2. naudojame mapperius vietoje DAO
+
+@Mapper
+public interface PlayerMapper {
+
+    @Insert("INSERT INTO player(name) VALUES(#{name})")
+    void insert(Player player);
+}
+
+Java klase virsta komponentu, kai yra @Named
+
+@RequestScoped - veikia per HTTP uzklausa
+@SessionScoped - veikia per visa userio sesija
+@ApplicationScoped - veikia per visa appo veikima
+
+@Inject - dependency injection - CDI sukuria ojekta ir ji iterpia, valdo jo gyvavimo laika ir zino kad egzistuoja
+                                     dao yra sukurtas per em, tai be inject em naudojimas visad rodys klaida
+
+DAO - atsakingas uz duomenu saugojima ir bendradarbiavima su DB:
+1. save
+2. update
+3. delete
+Trumpiau tariant kad nereiktu rasyti sql kodo.
+
+@transaction - automatiskai naudoja komandas kaip commit ir begin
