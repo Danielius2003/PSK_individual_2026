@@ -90,28 +90,22 @@ public class TrainerBean {
 
     @Transactional
     public void addPlayerToTrainer() {
-        // 1. load managed entities
         Trainer trainer = trainerDAO.findById(trainerId);
         Player player = playerDAO.findById(playerId);
 
-        // 2. initialize collections if null
         if (trainer.getPlayers() == null) trainer.setPlayers(new ArrayList<>());
         if (player.getTrainers() == null) player.setTrainers(new ArrayList<>());
 
-        // 3. add if not already assigned
-        if (!trainer.getPlayers().contains(player)) {
+        if (!trainer.getPlayers().contains(player)) {//patikrina del zaideju antrinimosi
             trainer.getPlayers().add(player);
             player.getTrainers().add(trainer);
         }
 
-        // 4. merge owning side
         trainerDAO.update(trainer);
 
-        // 5. reload trainer for JSF view
-        trainer = trainerDAO.findById(trainerId);
+        trainer = trainerDAO.findById(trainerId);//reload
 
-        // 6. reset dropdown
-        playerId = null;
+        playerId = null;//reikia ui, kad empty butu selectionas
     }
 
     public List<Player> getAvailablePlayers() {

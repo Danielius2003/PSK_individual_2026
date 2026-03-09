@@ -10,9 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7da38d1-686b-4776-a6de-84eccf8853d8" name="Changes" comment="Created logic for showing all the clubs, entering the clubs and displaying the trainers. Creating trainers and adding them to the clubs.">
-      <change afterPath="$PROJECT_DIR$/Pasiruosimas.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/daos/PlayerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/daos/PlayerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/beans/NavigationBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/beans/NavigationBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/beans/SportClubBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/beans/SportClubBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/beans/TrainerBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/beans/TrainerBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Trainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/entities/Trainer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,32 +48,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JBoss/WildFly Server.JBoss/WildFly 26.1.3.Final.executor&quot;: &quot;Run&quot;,
-    &quot;JBoss/WildFly Server.JBoss/WildFly 39.0.1.Final.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.PSK_individual_2026 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.PSK_individual_2026 [install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/bdani/PSK_individual_2026&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/bdani/PSK_individual_2026/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.applicationServers&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JBoss/WildFly Server.JBoss/WildFly 26.1.3.Final.executor": "Run",
+    "JBoss/WildFly Server.JBoss/WildFly 39.0.1.Final.executor": "Run",
+    "Maven.PSK_individual_2026 [clean].executor": "Run",
+    "Maven.PSK_individual_2026 [install].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/bdani/PSK_individual_2026",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/bdani/PSK_individual_2026/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.applicationServers",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\bdani\PSK_individual_2026\src\main\webapp" />
@@ -247,6 +256,9 @@
       <workItem from="1772900652373" duration="1876000" />
       <workItem from="1772964160222" duration="12154000" />
       <workItem from="1772991978241" duration="2316000" />
+      <workItem from="1773044022562" duration="1834000" />
+      <workItem from="1773054756804" duration="1026000" />
+      <workItem from="1773058005905" duration="1159000" />
     </task>
     <task id="LOCAL−00001" summary="Created all the entities. Made logic for adding a Player. Made the project run on wildfly 39">
       <option name="closed" value="true" />

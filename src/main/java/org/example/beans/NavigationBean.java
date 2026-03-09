@@ -10,7 +10,6 @@ public class NavigationBean {
     private Long trainerId;
     private Long clubId;
 
-    // --- optional: setters from pages ---
     public void setTrainerId(Long trainerId) {
         this.trainerId = trainerId;
     }
@@ -19,11 +18,9 @@ public class NavigationBean {
         this.clubId = clubId;
     }
 
-    // --- navigation methods ---
 
-    /**
-     * Go back to trainer page with trainerId in URL
-     */
+     //Go back to trainer page with trainerId in URL
+
     public String backToTrainer() {
         if (trainerId != null) {
             return "trainerInfo?faces-redirect=true&trainerId=" + trainerId;
@@ -31,9 +28,9 @@ public class NavigationBean {
         return "trainerList?faces-redirect=true"; // fallback
     }
 
-    /**
-     * Go back to sport club page with clubId in URL
-     */
+
+     //Go back to sport club page with clubId in URL
+
     public String backToClub() {
         if (clubId != null) {
             return "sportClubInfo?faces-redirect=true&clubId=" + clubId;

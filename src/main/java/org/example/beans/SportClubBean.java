@@ -60,14 +60,12 @@ public class SportClubBean {
 
     public SportClub getSportClub() {
         if (clubId != null) {
-            // load from DB if editing an existing club
             sportClub = sportClubDAO.findById(clubId);
         }
-        // if clubId is null or DB fetch failed, keep the existing sportClub
         return sportClub;
     }
 
-    // ========== ADD TRAINER ==========
+
     @Transactional
     public void addTrainerToClub() {
         Trainer trainer = trainerDAO.findById(selectedTrainerId);
@@ -82,8 +80,7 @@ public class SportClubBean {
         trainer.setSportClub(club);
         trainerDAO.update(trainer);
 
-        // refresh club data
-        sportClub = sportClubDAO.findById(clubId);
+        sportClub = sportClubDAO.findById(clubId);//reload kad matytusi naujas listas
     }
 
     public List<Trainer> getAllTrainers() {

@@ -22,7 +22,7 @@ public class Trainer {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "trainer_player",
-            joinColumns = @JoinColumn(name = "trainer_id"),
+            joinColumns = @JoinColumn(name = "trainer_id"),//trainer ownina, per ji kontroliuojame duomenu idejima
             inverseJoinColumns = @JoinColumn(name = "player_id")
     )
 
